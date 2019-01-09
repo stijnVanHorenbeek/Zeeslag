@@ -8,8 +8,8 @@ public class Ship extends Vehicle {
 
     protected Ship() { }
 
-    public Ship(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
-        super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+    public Ship(Coordinates coordinates, double speed, double agility, double size, int capacity, double vector) {
+        super(coordinates, speed, agility, size, capacity, vector);
     }
 
     public long getShipId() {

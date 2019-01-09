@@ -14,11 +14,11 @@ public class ActorFactory
         switch (type)
         {
             case TOWER:
-                return new Tower(coordinates, 0, 0, 0, Randomizer.getRandomDouble(), Randomizer.getRandomInt(), 0 );
+                return new Tower(coordinates, 0, 0, 0, Randomizer.getRandomInt(), 0 );
             case SHIP:
-                return new Ship(coordinates, Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomInt(), Randomizer.getRandomDouble());
+                return new Ship(coordinates, Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomInt(), Randomizer.getRandomDouble());
             case HELICOPTER:
-                return new Helicopter(coordinates, Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomInt(), Randomizer.getRandomDouble());
+                return new Helicopter(coordinates, Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomDouble(), Randomizer.getRandomInt(), Randomizer.getRandomDouble());
                 default:
                     throw new IllegalArgumentException("Not a known actor");
         }

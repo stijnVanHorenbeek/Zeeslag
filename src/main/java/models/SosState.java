@@ -15,8 +15,9 @@ public class SosState implements IState {
 
     @Override
     public String toString() {
-        return String.format("Vehicle has a problem at (lat: %f, long: %f)",
+        return String.format("Vehicle has a problem at (lat: %f, long: %f), %d people are in danger",
                 vehicle.getCoordinates().getLatitude(),
-                vehicle.getCoordinates().getLongitude());
+                vehicle.getCoordinates().getLongitude(),
+                vehicle.getCapacity());
     }
 }

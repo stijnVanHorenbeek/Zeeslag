@@ -9,6 +9,12 @@ import java.util.ArrayList;
 
 public class Startup {
     public final static Logger logger = LogManager.getRootLogger();
+
+    public final static int towerAmount = 20;
+    public final static int shipAmount = 500;
+    public final static int helicopterAmount = 100;
+    public final static int sosAmount = 50;
+
     public static void main(String[] args) {
         try {
             DBConnection dbConnection = new DBConnection();
@@ -42,7 +48,7 @@ public class Startup {
         randomSos(ships, 20);
 
         for (Tower tower: towers){
-            logger.debug(tower);
+            logger.debug("\n"+tower);
             for (Vehicle vehicle: tower.getVehicles()){
                 logger.debug(vehicle.getState());
             }

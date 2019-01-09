@@ -13,16 +13,14 @@ public abstract class Actor {
 
     protected Actor() { }
 
-    public Actor(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
+    public Actor(Coordinates coordinates, double speed, double agility, double size, int capacity, double vector) {
         if (capacity <= 0) throw new IllegalArgumentException("capacity can't be zero or negative");
         if (speed < 0) throw new IllegalArgumentException("speed can't be negative");
-        if (reactionTime < 0) throw new IllegalArgumentException("reaction time can't be negative");
         if (agility < 0) throw new IllegalArgumentException("agility can't be negative");
         if (size < 0) throw new IllegalArgumentException("size can't be negative");
 
         this.coordinates = coordinates;
         this.speed = speed;
-        this.reactionTime = reactionTime;
         this.agility = agility;
         this.size = size;
         this.capacity = capacity;
@@ -47,8 +45,8 @@ public abstract class Actor {
         return reactionTime;
     }
 
-    public void setReactionTime(double reactionTime) {
-        this.reactionTime = reactionTime;
+    public void setReactionTime(Actor actor) {
+        this.reactionTime = (getDistance(actor) / speed) * agility;
     }
 
     public double getAgility() {

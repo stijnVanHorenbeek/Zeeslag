@@ -11,13 +11,14 @@ public abstract class Vehicle extends Actor implements IObserver {
 
     protected Vehicle() { }
 
-    public Vehicle(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
-        super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+    public Vehicle(Coordinates coordinates, double speed, double agility, double size, int capacity, double vector) {
+        super(coordinates, speed, agility, size, capacity, vector);
         state = new NormalState(this);
     }
 
     public void update(Vehicle vehicleInSos) {
         this.state = new RescueState(vehicleInSos, this);
+        this.setReactionTime(vehicleInSos);
         act();
     }
 

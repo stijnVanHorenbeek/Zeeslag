@@ -2,6 +2,7 @@ package models;
 
 import models.valueTypes.Coordinates;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Tower extends Actor implements IObservable {
@@ -10,10 +11,9 @@ public class Tower extends Actor implements IObservable {
     private LinkedList<Vehicle> vehiclesInRescue;
     private LinkedList<Vehicle> vehiclesInSos;
 
-    public Tower(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
-        super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+    public Tower(Coordinates coordinates, double speed, double agility, double size, int capacity, double vector) {
+        super(coordinates, speed, agility, size, capacity, vector);
         if (speed != 0) throw new IllegalArgumentException("Tower can't move");
-        if (reactionTime != 0) throw new IllegalArgumentException("Tower can't move");
         if (agility != 0) throw new IllegalArgumentException("Tower can't move");
         if (vector != 0) throw new IllegalArgumentException("Tower can't move");
 
@@ -32,13 +32,20 @@ public class Tower extends Actor implements IObservable {
 
     public void notifyObservers() {
         for (Vehicle vehicleInSos : vehiclesInSos) {
-            int capacity = vehicleInSos.getCapacity();
-
-            for (Vehicle vehicle : vehicles) {
-                if (!vehiclesInSos.contains(vehicle) && !vehiclesInRescue.contains(vehicle)) {
-                    // notify ships to rescue capacity of shipInSos
+            int capacityInSos = vehicleInSos.getCapacity();
+            determineShipsForRescue(capacityInSos, vehicles);
+            for (Vehicle vehicle : vehiclesInRescue) {
                             vehicle.update(vehicleInSos);
-                }
+            }
+        }
+    }
+
+    private void determineShipsForRescue(int capacity, LinkedList<Vehicle> vehicles) {
+        Collections.sort(vehicles, new ReactionTimeComparer());
+        for(Vehicle vehicle : vehicles) {
+            if (capacity > 0) {
+                capacity -= vehicle.getCapacity();
+                vehiclesInRescue.add(vehicle);
             }
         }
     }
@@ -47,6 +54,7 @@ public class Tower extends Actor implements IObservable {
         vehiclesInSos.add(vehicle);
         notifyObservers();
         vehiclesInSos.remove(vehicle);
+        vehiclesInRescue.clear();
     }
 
     public LinkedList<Vehicle> getVehicles() {
