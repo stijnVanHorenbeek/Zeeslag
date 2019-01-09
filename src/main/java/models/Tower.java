@@ -61,6 +61,8 @@ public class Tower extends Actor implements IObservable {
     }
 
     public void setTowerId(long towerId) {
+        if (towerId <=0) throw new IllegalArgumentException("id can't be zero or lower");
+
         this.towerId = towerId;
     }
     @Override

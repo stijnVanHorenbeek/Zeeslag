@@ -10,23 +10,34 @@ import java.util.ArrayList;
 public class Startup {
     public final static Logger logger = LogManager.getRootLogger();
     public static void main(String[] args) {
-        DBConnection dbConnection = new DBConnection();
-        dbConnection.testConnection();
+        try {
+            DBConnection dbConnection = new DBConnection();
+            dbConnection.testConnection();
 
-        ArrayList<Tower> towers = generateTowers(1);
-        dbConnection.saveTower(towers);
-        ArrayList<Vehicle> ships = generateShips(towers, 1);
-        dbConnection.saveShip(ships);
-        ArrayList<Vehicle> helicopters = generateHelicopters(towers, 1);
-        dbConnection.saveHelicopter(helicopters);
+            ArrayList<Tower> towers = generateTowers(20);
+            dbConnection.saveTower(towers);
+            ArrayList<Vehicle> ships = generateShips(towers, 500);
+            dbConnection.saveShip(ships);
+            ArrayList<Vehicle> helicopters = generateHelicopters(towers, 100);
+            dbConnection.saveHelicopter(helicopters);
 
+            outputGeneratedActors(towers);
+            simulateSos(towers, ships);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    private static void outputGeneratedActors(ArrayList<Tower> towers) {
         for (Tower tower: towers){
             logger.debug(tower);
             for (Vehicle vehicle: tower.getVehicles()){
                 logger.debug(vehicle);
             }
         }
+    }
 
+    private static void simulateSos(ArrayList<Tower> towers, ArrayList<Vehicle> ships) {
         logger.debug("Simulate SOS\n");
         randomSos(ships, 20);
 
@@ -36,7 +47,6 @@ public class Startup {
                 logger.debug(vehicle.getState());
             }
         }
-
     }
 
     private static void randomSos(ArrayList<Vehicle> ships, int amount) {

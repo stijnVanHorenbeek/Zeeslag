@@ -17,6 +17,7 @@ public class Ship extends Vehicle {
     }
 
     public void setShipId(long shipId) {
+        if (shipId <=0) throw new IllegalArgumentException("id can't be zero or lower");
         this.shipId = shipId;
     }
 
