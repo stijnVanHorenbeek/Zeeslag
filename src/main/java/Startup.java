@@ -2,6 +2,7 @@ import models.*;
 import models.valueTypes.Coordinates;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import persistence.DBConnection;
 
 import java.util.ArrayList;
 
@@ -9,41 +10,46 @@ import java.util.ArrayList;
 public class Startup {
     public final static Logger logger = LogManager.getRootLogger();
     public static void main(String[] args) {
-        ArrayList<Tower> towers = generateTowers();
-        ArrayList<Vehicle> ships = generateShips(towers);
-        ArrayList<Vehicle> helicopters = generateHelicopters(towers);
+        DBConnection dbConnection = new DBConnection();
+        dbConnection.testConnection();
+
+        ArrayList<Tower> towers = generateTowers(1);
+        dbConnection.saveTower(towers);
+        ArrayList<Vehicle> ships = generateShips(towers, 1);
+        dbConnection.saveShip(ships);
+        ArrayList<Vehicle> helicopters = generateHelicopters(towers, 1);
+        dbConnection.saveHelicopter(helicopters);
 
         for (Tower tower: towers){
-            System.out.println(tower);
+            logger.debug(tower);
             for (Vehicle vehicle: tower.getVehicles()){
-                System.out.println(vehicle);
+                logger.debug(vehicle);
             }
         }
 
-        System.out.println("\nSimulate SOS\n");
-        randomSos(ships);
+        logger.debug("Simulate SOS\n");
+        randomSos(ships, 20);
 
-        System.out.println("\nResponse to SOS\n");
         for (Tower tower: towers){
-            System.out.println(tower);
+            logger.debug(tower);
             for (Vehicle vehicle: tower.getVehicles()){
-                System.out.println(vehicle.getState());
+                logger.debug(vehicle.getState());
             }
         }
 
     }
 
-    private static void randomSos(ArrayList<Vehicle> ships) {
-        for (int i = 0; i < 5; i++) {
+    private static void randomSos(ArrayList<Vehicle> ships, int amount) {
+        for (int i = 0; i < amount; i++) {
             Vehicle ship = ships.get(Randomizer.getRandomIntBetweenBounds(ships.size(), 0));
             ship.setState(new SosState(ship));
             ship.act();
         }
     }
 
-    private static ArrayList<Vehicle> generateShips(ArrayList<Tower> towers) {
+    private static ArrayList<Vehicle> generateShips(ArrayList<Tower> towers, int amount) {
         ArrayList<Vehicle> ships = new ArrayList<Vehicle>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < amount; i++) {
             Vehicle ship = (Vehicle) ActorFactory.createActor(ActorFactory.SHIP, new Coordinates(Randomizer.getRandomDouble(), Randomizer.getRandomDouble()));
             ship.setTowers(towers);
             ships.add(ship);
@@ -51,9 +57,9 @@ public class Startup {
         return ships;
     }
 
-    private static ArrayList<Vehicle> generateHelicopters(ArrayList<Tower> towers) {
+    private static ArrayList<Vehicle> generateHelicopters(ArrayList<Tower> towers, int amount) {
         ArrayList<Vehicle> helicopters = new ArrayList<Vehicle>();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < amount; i++) {
             Vehicle helicopter = (Vehicle) ActorFactory.createActor(ActorFactory.HELICOPTER, new Coordinates(Randomizer.getRandomDouble(), Randomizer.getRandomDouble()));
             helicopter.setTowers(towers);
             helicopters.add(helicopter);
@@ -61,9 +67,9 @@ public class Startup {
         return helicopters;
     }
 
-    private static ArrayList<Tower> generateTowers() {
+    private static ArrayList<Tower> generateTowers(int amount) {
         ArrayList<Tower> towers = new ArrayList<Tower>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < amount; i++) {
             Tower tower = (Tower) ActorFactory.createActor(ActorFactory.TOWER, new Coordinates(Randomizer.getRandomDouble(), Randomizer.getRandomDouble()));
             towers.add(tower);
         }

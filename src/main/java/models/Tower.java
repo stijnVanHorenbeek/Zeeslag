@@ -5,6 +5,7 @@ import models.valueTypes.Coordinates;
 import java.util.LinkedList;
 
 public class Tower extends Actor implements IObservable {
+    private long towerId;
     private LinkedList<Vehicle> vehicles;
     private LinkedList<Vehicle> vehiclesInRescue;
     private LinkedList<Vehicle> vehiclesInSos;
@@ -55,6 +56,13 @@ public class Tower extends Actor implements IObservable {
         return vehiclesInSos;
     }
 
+    public long getTowerId() {
+        return towerId;
+    }
+
+    public void setTowerId(long towerId) {
+        this.towerId = towerId;
+    }
     @Override
     public String toString() {
         return String.format("Tower => lat: %f, long: %f", getCoordinates().getLatitude(), getCoordinates().getLongitude());

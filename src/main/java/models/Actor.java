@@ -11,6 +11,8 @@ public abstract class Actor {
     private int capacity;
     private double vector;
 
+    protected Actor() { }
+
     public Actor(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
         if (capacity <= 0) throw new IllegalArgumentException("capacity can't be zero or negative");
         if (speed < 0) throw new IllegalArgumentException("speed can't be negative");

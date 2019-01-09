@@ -3,10 +3,21 @@ package models;
 import models.valueTypes.Coordinates;
 
 
-public class Ship extends Vehicle implements IObserver {
+public class Ship extends Vehicle {
+    private long shipId;
+
+    protected Ship() { }
 
     public Ship(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
         super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+    }
+
+    public long getShipId() {
+        return shipId;
+    }
+
+    public void setShipId(long shipId) {
+        this.shipId = shipId;
     }
 
     @Override

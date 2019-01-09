@@ -4,9 +4,19 @@ import models.valueTypes.Coordinates;
 
 public class Helicopter extends Vehicle {
 
+    private long helicopterId;
 
+    protected Helicopter() {}
     public Helicopter(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
         super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+    }
+
+    public long getHelicopterId() {
+        return helicopterId;
+    }
+
+    public void setHelicopterId(long helicopterId) {
+        this.helicopterId = helicopterId;
     }
 
     @Override
