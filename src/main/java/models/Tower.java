@@ -12,6 +12,11 @@ public class Tower extends Actor implements IObservable {
 
     public Tower(Coordinates coordinates, double speed, double reactionTime, double agility, double size, int capacity, double vector) {
         super(coordinates, speed, reactionTime, agility, size, capacity, vector);
+        if (speed != 0) throw new IllegalArgumentException("Tower can't move");
+        if (reactionTime != 0) throw new IllegalArgumentException("Tower can't move");
+        if (agility != 0) throw new IllegalArgumentException("Tower can't move");
+        if (vector != 0) throw new IllegalArgumentException("Tower can't move");
+
         vehicles = new LinkedList<Vehicle>();
         vehiclesInRescue = new LinkedList<Vehicle>();
         vehiclesInSos = new LinkedList<Vehicle>();
