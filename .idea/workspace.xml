@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa8f7fac-8a6a-4591-8da7-35950e342277" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Startup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Actor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ActorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ActorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Helicopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IObservable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/IObservable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/IObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/IState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/IState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/NormalState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/NormalState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Randomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Randomizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ReactionTimeComparer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ReactionTimeComparer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/RescueState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/RescueState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/SosState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/SosState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Tower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/valueTypes/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/valueTypes/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HelicopterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HelicopterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ShipTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShipTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+              <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,27 +60,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/NormalState.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Startup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#132#133#0" expanded="true" />
-                <element signature="e#170#171#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="364">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/Randomizer.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ActorFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" column="103" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
               <folding>
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -218,7 +194,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/ActorFactoryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/TowerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Startup.java" />
         <option value="$PROJECT_DIR$/src/test/java/ShipTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/HelicopterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Actor.java" />
@@ -237,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/main/java/models/Helicopter.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Startup.java" />
       </list>
     </option>
   </component>
@@ -334,7 +310,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547142378600" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547142608800" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProgrammerenMetJava" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -437,7 +413,7 @@
       <workItem from="1546886481245" duration="7660000" />
       <workItem from="1547020177998" duration="21073000" />
       <workItem from="1547060698407" duration="4889000" />
-      <workItem from="1547140269866" duration="2107000" />
+      <workItem from="1547140269866" duration="2360000" />
     </task>
     <servers />
   </component>
@@ -474,7 +450,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94868000" />
+    <option name="totallyTimeSpent" value="95121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -624,16 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ActorFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TowerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -641,13 +607,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Startup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
@@ -831,10 +790,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ActorFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="103" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Startup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
         </state>
       </provider>
     </entry>

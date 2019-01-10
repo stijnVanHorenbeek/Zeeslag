@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class Startup {
     public final static Logger logger = LogManager.getRootLogger();
 
-    public final static int towerAmount = 1;
-    public final static int shipAmount = 5;
-    public final static int helicopterAmount = 0;
-    public final static int sosAmount = 2;
+    private final static int towerAmount = 10;
+    private final static int shipAmount = 500;
+    private final static int helicopterAmount = 100;
+    private final static int sosAmount = 50;
 
     public static void main(String[] args) {
         try {
