@@ -25,13 +25,15 @@ public class Tower extends Actor implements IObservable {
     }
 
     public void notifyObservers() {
-        for (Vehicle vehicleInSos : vehiclesInSos) {
-            int capacity = vehicleInSos.getCapacity();
-
-            for (Vehicle vehicle : vehicles) {
-                if (!vehiclesInSos.contains(vehicle) && !vehiclesInRescue.contains(vehicle)) {
-                    // notify ships to rescue capacity of shipInSos
+        for (Vehicle vehicleInSos: vehiclesInSos){
+            for (Vehicle vehicle: vehicles){
+                if (!vehiclesInSos.contains(vehicle) && !vehiclesInRescue.contains(vehicle)){
+                    if (vehicle.getCapacity()>= vehicleInSos.getCapacity()){
+                            //notify ships to rescue shipInSos
                             vehicle.update(vehicleInSos);
+                            return;
+                    }
+
                 }
             }
         }

@@ -9,7 +9,7 @@
         <module name="Zeeslag" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="Zeeslag" target="1.5" />
     </bytecodeTargetLevel>
   </component>
