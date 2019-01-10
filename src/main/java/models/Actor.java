@@ -17,7 +17,7 @@ public abstract class Actor {
         if (capacity <= 0) throw new IllegalArgumentException("capacity can't be zero or negative");
         if (speed < 0) throw new IllegalArgumentException("speed can't be negative");
         if (agility < 0) throw new IllegalArgumentException("agility can't be negative");
-        if (size < 0) throw new IllegalArgumentException("size can't be negative");
+        if (size <= 0) throw new IllegalArgumentException("size can't be zero or negative");
 
         this.coordinates = coordinates;
         this.speed = speed;
