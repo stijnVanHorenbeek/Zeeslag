@@ -1,5 +1,12 @@
 package models;
 
+/**
+ * State all vehicles start with
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
+
 public class NormalState implements IState {
     private Vehicle vehicle;
 

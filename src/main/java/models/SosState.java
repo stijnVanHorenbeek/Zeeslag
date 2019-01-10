@@ -1,5 +1,12 @@
 package models;
 
+/**
+ * Sos State class for vehicles
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
+
 public class SosState implements IState {
     Vehicle vehicle;
 

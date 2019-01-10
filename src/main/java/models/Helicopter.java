@@ -2,6 +2,13 @@ package models;
 
 import models.valueTypes.Coordinates;
 
+/**
+ * Helicopter Entity class, Observer
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
+
 public class Helicopter extends Vehicle {
 
     private long helicopterId;

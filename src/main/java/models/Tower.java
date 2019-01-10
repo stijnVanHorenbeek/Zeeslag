@@ -4,7 +4,12 @@ import models.valueTypes.Coordinates;
 
 import java.util.Collections;
 import java.util.LinkedList;
-
+/**
+ * Tower entity,
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
 public class Tower extends Actor implements IObservable {
     private long towerId;
     private LinkedList<Vehicle> vehicles;

@@ -2,7 +2,12 @@ package models;
 
 import models.valueTypes.Coordinates;
 
-
+/**
+ * Ship entity class, Observer
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
 public class Ship extends Vehicle {
     private long shipId;
 

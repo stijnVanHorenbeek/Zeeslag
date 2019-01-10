@@ -2,6 +2,13 @@ package models;
 
 import models.valueTypes.Coordinates;
 
+/**
+ * abstract base class for all actors
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
+
 public abstract class Actor {
     private Coordinates coordinates;
     private double speed;
@@ -17,7 +24,8 @@ public abstract class Actor {
         if (capacity <= 0) throw new IllegalArgumentException("capacity can't be zero or negative");
         if (speed < 0) throw new IllegalArgumentException("speed can't be negative");
         if (agility < 0) throw new IllegalArgumentException("agility can't be negative");
-        if (size < 0) throw new IllegalArgumentException("size can't be negative");
+        if (size <= 0) throw new IllegalArgumentException("size can't be zero or negative");
+        if (vector < 0) throw new IllegalArgumentException("size can't be ");
 
         this.coordinates = coordinates;
         this.speed = speed;

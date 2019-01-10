@@ -8,7 +8,12 @@ import org.apache.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 
-
+/**
+ * Class used for database connection, and saving of entities
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
 
 public class DBConnection {
     public static final Logger logger = LogManager.getRootLogger();

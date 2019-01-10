@@ -4,6 +4,13 @@ import models.valueTypes.Coordinates;
 
 import java.util.ArrayList;
 
+/**
+ * abstract class for all vehicles
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
+
 public abstract class Vehicle extends Actor implements IObserver {
     private ArrayList<Tower> towers;
     private Tower activeTower;

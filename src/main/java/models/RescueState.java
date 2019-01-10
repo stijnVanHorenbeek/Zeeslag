@@ -1,5 +1,10 @@
 package models;
-
+/**
+ * Rescue State for vehicles
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
 public class RescueState implements IState {
     private Vehicle vehicleToRescue;
     private Vehicle vehicle;

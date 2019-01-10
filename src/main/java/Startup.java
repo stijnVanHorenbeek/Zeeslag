@@ -5,26 +5,31 @@ import org.apache.log4j.Logger;
 import persistence.DBConnection;
 
 import java.util.ArrayList;
-
+/**
+ * Startup class, start point of application
+ *
+ * @author Stijn Van Horenbeek, Evy Dehaene, Olivier Morias
+ *
+ */
 
 public class Startup {
     public final static Logger logger = LogManager.getRootLogger();
 
-    public final static int towerAmount = 20;
-    public final static int shipAmount = 500;
-    public final static int helicopterAmount = 100;
-    public final static int sosAmount = 50;
+    public final static int towerAmount = 1;
+    public final static int shipAmount = 5;
+    public final static int helicopterAmount = 0;
+    public final static int sosAmount = 2;
 
     public static void main(String[] args) {
         try {
             DBConnection dbConnection = new DBConnection();
             dbConnection.testConnection();
 
-            ArrayList<Tower> towers = generateTowers(20);
+            ArrayList<Tower> towers = generateTowers(towerAmount);
             dbConnection.saveTower(towers);
-            ArrayList<Vehicle> ships = generateShips(towers, 500);
+            ArrayList<Vehicle> ships = generateShips(towers, shipAmount);
             dbConnection.saveShip(ships);
-            ArrayList<Vehicle> helicopters = generateHelicopters(towers, 100);
+            ArrayList<Vehicle> helicopters = generateHelicopters(towers, helicopterAmount);
             dbConnection.saveHelicopter(helicopters);
 
             outputGeneratedActors(towers);
@@ -45,7 +50,7 @@ public class Startup {
 
     private static void simulateSos(ArrayList<Tower> towers, ArrayList<Vehicle> ships) {
         logger.debug("Simulate SOS\n");
-        randomSos(ships, 20);
+        randomSos(ships, sosAmount);
 
         for (Tower tower: towers){
             logger.debug("\n"+tower);
